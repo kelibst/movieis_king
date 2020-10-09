@@ -16,7 +16,7 @@ class Movies extends Component {
         return (
         <section className="container-fluid">
             <div className="movies-container my-4 py-3">
-                <h3 className="movies-header">Recent</h3>
+                <h3 className="movies-header">Trending</h3>
                 <div className="row m-0">
                 {movies && movies.map(movie => {
                     return  (<Movie movie={movie} key={movie.id}/>)
