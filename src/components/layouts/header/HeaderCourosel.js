@@ -1,5 +1,5 @@
 import React from 'react'
-import './layouts/HeaderCourosel.scss'
+import './HeaderCourosel.scss'
 import lionKing from '../../assets/lionking.jpeg'
 import HeaderTitle from './layouts/HeaderTitle'
 
