@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Movie from './Movie'
+import fetchMovies from '../../../store/actions/fetchAction'
 import './Movies.scss'
 
 
 class Movies extends Component {
    
-    
+    componentDidMount(){
+        this.props.fetchMovies()
+    }
     render(){
         const { movies } = this.props
        
@@ -26,4 +29,12 @@ class Movies extends Component {
     
 }
 
-export default (Movies)
+const mapStateToProps = (state) => {
+    console.log(state)
+    return {
+        movies: state.movies.movies
+    }
+}
+
+
+export default connect(mapStateToProps, { fetchMovies }) (Movies)
