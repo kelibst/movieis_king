@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import HeaderCourosel from '../HeaderCourosel'
 import './Header.scss'
+import HeaderCourosel from './HeaderCourosel'
 import NavBar from './NavBar'
 const Header = () => {
     return (
