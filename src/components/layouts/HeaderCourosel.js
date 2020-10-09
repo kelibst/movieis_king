@@ -1,6 +1,6 @@
 import React from 'react'
 import './layouts/HeaderCourosel.scss'
-import lionKing from './assets/lionking.jpeg'
+import lionKing from '../../assets/lionking.jpeg'
 import HeaderTitle from './layouts/HeaderTitle'
 
 const HeaderCourosel = () => {
