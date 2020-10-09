@@ -7,7 +7,6 @@ const initialState = {
 const searchReducer = (state = initialState, action) => {
     switch (action.type){
         case "FETCH_DATA":
-            console.log(action.payload)
             return {
                 ...state,
                 movies: action.payload
