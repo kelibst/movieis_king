@@ -11,10 +11,13 @@ const HeaderCourosel = ({movies}) => {
         <div id="headercourosels" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#headercourosels" data-slide-to="0" className="active"></li>
-                {movies && movies.map ((movie, ) => {
-                    return (
-                    <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id}></li>  
-                )})}
+                {movies && movies.map ((movie ) => {
+                    if(url(movie.backdrop_path)){
+                          return (
+                            <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id}></li>  
+                        )
+                    }
+                  })}
             </ol>
 
         <div className="carousel-inner">
@@ -22,11 +25,14 @@ const HeaderCourosel = ({movies}) => {
                 <img className="d-block w-100" src={lionKing} alt="First slide" />
             </div>
                 {movies && movies.map((movie) => {
-                return(
-                <div className="carousel-item" key={movie.id}>
-                    <img className="d-block w-100" src={url(movie.backdrop_path)} alt={movie.id} />
-                </div>)
-                
+                    if(url(movie.backdrop_path)){
+                        return(
+                            <div className="carousel-item" key={movie.id}>
+                                <img className="d-block w-100" src={url(movie.backdrop_path) ? url(movie.backdrop_path) : lionKing} alt={movie.id} />
+                                <HeaderTitle movie={movie} key={movie.id}/>
+                            </div>)
+                            
+                    } 
                 })}
         </div>
         <a className="carousel-control-prev" href="#headercourosels" role="button" data-slide="prev">
