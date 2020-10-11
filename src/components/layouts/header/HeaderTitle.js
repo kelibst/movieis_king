@@ -9,7 +9,7 @@ const HeaderTitle = ({movie}) => {
     
    
       <div className="description">
-        <p className="header-title-desc">
+        <p className="header-title-desc d-none d-sm-block">
           {overview}
         </p>
       </div>
