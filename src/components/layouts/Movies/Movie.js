@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { url } from './urlGenerator'
 const Movie = ({movie}) => {
     return (
@@ -7,7 +8,7 @@ const Movie = ({movie}) => {
                    
                 </div>
                 <div className="card-body" >
-                    <h4 className="card-title text-dark">{movie.title}</h4>
+                    <Link to={ `/movie/${movie.id}`}><h4 className="card-title text-dark">{movie.title}</h4></Link>
                 </div>
             </div>
     )
