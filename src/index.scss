@@ -2,6 +2,7 @@ $darkout: #000000;
 $whiteout: #D6D6D6;
 $blood: #FF0E39;
 $greyout: #35353F;
+$lightdarken: #201f20;
 
 body {
   margin: 0;
@@ -26,5 +27,11 @@ code {
 
   &-greyout{
     color: $greyout;
+  }
+}
+
+.bg{
+  &-light-darken{
+    background: $lightdarken;
   }
 }
