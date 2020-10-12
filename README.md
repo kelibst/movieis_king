@@ -3,6 +3,7 @@ A basic React and Redux movies app. It displays base on categories selected by t
 
 The webapp should have at least 2 types of pages:
 
+# Catalogue of Statistics
 - one page with a list of items that could be filtered by some parameters; 
 - one page for the item details; 
 
@@ -12,11 +13,11 @@ The webapp should have at least 2 types of pages:
     - Order movies by selected categories
 
 # Screenshot
-![Screenshot]()
+![Screenshot](./screenshot.gif)
 
 # Live Demo
 [Live Demo Link](https://kelimovies.herokuapp.com/) 
-
+[Live Demo Link](https://www.loom.com/share/36ee844c9fe44c6bb1bc42416d9531a2) 
 
 # Built With
 
