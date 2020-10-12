@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { url } from '../Movies/urlGenerator'
 
 const HeaderCourosel = ({movies}) => {
-    console.log(movies)
+    console.log(" courosel movies ", movies)
     return (
         <div id="headercourosels" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">

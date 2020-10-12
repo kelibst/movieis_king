@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createContext } from 'react'
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../../store/actions/fetchAction';
 
@@ -9,13 +9,15 @@ const categories = [
     'TRENDING',
   ];
 
+  export const CatNameContext = createContext();
+
   const catDropDown = categories.map(category => (
     <option key={category} value={category}>
       {category}
     </option>
   ));
 
- class moviesForm extends Component {
+ class MoviesForm extends Component {
 
     constructor(props) {
         super(props);
@@ -39,6 +41,8 @@ const categories = [
 
     render() {
         return (
+            <CatNameContext.Provider value={{...this.state}}>
+            <h3 className="movies-header">{this.state.category}</h3>
             <form className="form-row mt-5 py-5" onSubmit={this.handleChange}>
                 <div className="col">
                 <select className="form-control" value={this.state.category} name="category" onChange={this.handleChange}>
@@ -49,7 +53,9 @@ const categories = [
                 </select>
                 </div>
             </form>
+            {this.props.children}
+            </CatNameContext.Provider>
         )
     }
 }
-export default connect(null,{ fetchMovies })(moviesForm)
+export default connect(null,{ fetchMovies })(MoviesForm)
