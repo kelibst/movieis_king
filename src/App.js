@@ -7,14 +7,14 @@ import detailsPage from './components/pages/detailsPage';
 
 const App = () => (
   <BrowserRouter>
-    <div className="App">
-      <Header />
-      <Switch>
+    <Switch>
+      <div className="App">
+        <Header />
         <Route exact path="/" component={Movies} />
         <Route path="/movie/:movie_id" component={detailsPage} />
-      </Switch>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </Switch>
   </BrowserRouter>
 );
 
