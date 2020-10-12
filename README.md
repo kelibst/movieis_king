@@ -1,6 +1,11 @@
 # movieis_king
 A basic React and Redux movies app. It displays base on categories selected by the user. 
 
+The webapp should have at least 2 types of pages:
+
+- one page with a list of items that could be filtered by some parameters; 
+- one page for the item details; 
+
 - Basic movies app
 - Users can:
     - See all recent movies
