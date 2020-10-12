@@ -17,6 +17,7 @@ A basic React and Redux movies app. It displays base on categories selected by t
 
 - HTML 
 - CSS
+- SCSS
 - BOOTSTRAP
 - JAVASCRIPT
 - NPM

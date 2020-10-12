@@ -1,6 +1,6 @@
 .movies-img {
   min-height: 20rem;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -16,7 +16,7 @@
     height: 100%;
     min-height: 30rem;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
   }
 
