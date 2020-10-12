@@ -3,6 +3,7 @@ import React from 'react';
 import Icofont from 'react-icofont';
 
 const HeaderTitle = ({ movie }) => {
+  
   const { title, overview } = movie;
   return (
     <div className="header-title">
