@@ -21,7 +21,6 @@ class NavBar extends Component{
 
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.state)
     }
     render(){
         return (
@@ -35,7 +34,7 @@ class NavBar extends Component{
                 <form className="d-flex" onSubmit={this.handleSubmit}>
                     <input 
                         type="text" 
-                        className="form-control"
+                        className="form-control d-none d-sm-block"
                         name="search"
                         placeholder="Search Movie"
                         onChange={this.handleChange}

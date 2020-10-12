@@ -11,7 +11,7 @@ const HeaderCourosel = ({movies}) => {
         <div id="headercourosels" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#headercourosels" data-slide-to="0" className="active"></li>
-                {movies && movies.map ((movie ) => {
+                {movies && movies.map ((movie, ind ) => {
                     if(url(movie.backdrop_path)){
                           return (
                             <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id}></li>  

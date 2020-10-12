@@ -9,4 +9,10 @@
     padding: 2rem;
     background: #201f20;
     border-radius: 1rem;
-  }
+}
+
+@media only screen and (max-width: 400px){
+    .movies-container{
+        padding: 0;
+    }
+}

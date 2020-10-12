@@ -27,3 +27,10 @@
   .courosel{
       max-height: 90vh;
   }
+
+
+@media only screen and (max-width: 400px){
+    .header-title-text{
+        font-size: 1.5rem;
+    }
+}
