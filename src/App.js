@@ -5,20 +5,17 @@ import Header from './components/layouts/header/Header';
 import Movies from './components/layouts/Movies/Movies';
 import detailsPage from './components/pages/detailsPage';
 
-
-const App = () => {
-  return (
-    <BrowserRouter>
+const App = () => (
+  <BrowserRouter>
     <div className="App">
       <Header />
       <Switch>
-      <Route exact path="/" component={Movies} /> 
-      <Route path="/movie/:movie_id" component={detailsPage} />
-      </Switch> 
+        <Route exact path="/" component={Movies} />
+        <Route path="/movie/:movie_id" component={detailsPage} />
+      </Switch>
       <Footer />
     </div>
-    </BrowserRouter>
-  );
-}
+  </BrowserRouter>
+);
 
 export default App;

@@ -12,15 +12,14 @@ class detailsPage extends Component {
     render(){
 
         const { data } = this.props.movie
-        console.log(data)
         const report = data ? (
-            <div className="card col-md-6 mx-auto m-2 p-0 border-0">
-                <div className="card-img movies-img" style={{backgroundImage: `url(${url(data.poster_path)})`}}>
+            <div className="m-2 p-0 d-sm-flex border-0">
+                <div className="col-md-5 movie-img" style={{backgroundImage: `url(${url(data.poster_path)})`}}>
                    
                 </div>
-                <div className="card-body" >
-                    <h4 className="card-title text-dark">{data.title}</h4>
-                    <p className="text-secondary">{data.overview}</p>
+                <div className="movie-body col-md-7 text-white" >
+                    <h4 className="movie-title text-white">{data.title}</h4>
+                    <p className="text-white movie-overiew text-center">{data.overview}</p>
                 </div>
             </div>
         ) : (
@@ -29,7 +28,7 @@ class detailsPage extends Component {
             </div>
         )
        
-         return (<div className="movieCotainer">
+         return (<div className="container my-5 py-4">
             {report}
          </div> )
     }

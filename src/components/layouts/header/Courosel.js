@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Courosel = (movie) => {
-    return (
-        <div id="headercourosels" className="carousel slide" data-ride="carousel">
-            
-        </div>
-    )
-}
+const Courosel = movie => (
+  <div id="headercourosels" className="carousel slide" data-ride="carousel" />
+);
 
-export default Courosel
+export default Courosel;
