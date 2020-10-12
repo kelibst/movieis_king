@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component, createContext } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../../store/actions/fetchAction';

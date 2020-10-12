@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { Link } from 'react-router-dom';

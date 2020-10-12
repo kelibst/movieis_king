@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Movie from './Movie';
@@ -5,12 +6,15 @@ import { fetchMovies } from '../../../store/actions/fetchAction';
 import './Movies.scss';
 import MoviesForm, { CatNameContext } from './moviesForm';
 
+
+
 class Movies extends Component {
+  static contextType = CatNameContext
   componentDidMount() {
     this.props.fetchMovies('DISCOVER', 2);
   }
 
-    static contextType = CatNameContext
+    
 
     render() {
       const { movies } = this.props;
@@ -18,7 +22,6 @@ class Movies extends Component {
       return (
         <CatNameContext.Consumer>
           {context => {
-            console.log(context);
             return (
               <section className="container-fluid">
                 <div className="movies-container my-4 py-3">

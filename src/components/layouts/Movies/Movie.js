@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { url } from './urlGenerator';
+import  url  from './urlGenerator';
 
 const Movie = ({ movie }) => (
   <div className="card p-2 p-0 col-sm-4 col-lg-3 border-0">

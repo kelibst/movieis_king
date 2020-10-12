@@ -1,44 +1,40 @@
-import Axios from 'axios';
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+/* eslint-disable */
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { fetchMovie } from '../../store/actions/fetchAction';
-import { url } from '../layouts/Movies/urlGenerator'
-const API_KEY = process.env.REACT_APP_MOVIEDB_API_KEY;
+import url from '../layouts/Movies/urlGenerator';
+
 class detailsPage extends Component {
-    componentDidMount(){
-        const id = this.props.match.params.movie_id;
-        this.props.fetchMovie(id)
-    }
-    render(){
+  componentDidMount() {
+    const id = this.props.match.params.movie_id;
+    this.props.fetchMovie(id);
+  }
 
-        const { data } = this.props.movie
-        const report = data ? (
-            <div className="m-2 p-0 d-sm-flex border-0">
-                <div className="col-md-5 movie-img" style={{backgroundImage: `url(${url(data.poster_path)})`}}>
-                   
-                </div>
-                <div className="movie-body col-md-7 text-white" >
-                    <h4 className="movie-title text-white">{data.title}</h4>
-                    <p className="text-white movie-overiew text-center">{data.overview}</p>
-                </div>
-            </div>
-        ) : (
-            <div className="container">
-                <h6 className="text-danger text-center">Sorry we could not load that movie.</h6>
-            </div>
-        )
-       
-         return (<div className="container my-5 py-4">
-            {report}
-         </div> )
-    }
-   
+  render() {
+    const { data } = this.props.movie;
+    const report = data ? (
+      <div className="m-2 p-0 d-sm-flex border-0">
+        <div className="col-md-5 movie-img" style={{ backgroundImage: `url(${url(data.poster_path)})` }} />
+        <div className="movie-body col-md-7 text-white">
+          <h4 className="movie-title text-white">{data.title}</h4>
+          <p className="text-white movie-overiew text-center">{data.overview}</p>
+        </div>
+      </div>
+    ) : (
+      <div className="container">
+        <h6 className="text-danger text-center">Sorry we could not load that movie.</h6>
+      </div>
+    );
+
+    return (
+      <div className="container my-5 py-4">
+        {report}
+      </div>
+    );
+  }
 }
-const mapStateToProps = (state) => {
-    return {
-        movie: state.movies.movie
-    }
-}
+const mapStateToProps = state => ({
+  movie: state.movies.movie,
+});
 
-
-export default connect(mapStateToProps, { fetchMovie }) (detailsPage)
+export default connect(mapStateToProps, { fetchMovie })(detailsPage);

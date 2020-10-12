@@ -1,5 +1,6 @@
 import React from 'react';
 import Icofont from 'react-icofont';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => (
@@ -14,7 +15,8 @@ const Footer = () => (
           <h5 className="font-weight-bold text-uppercase mb-4">Footer Content</h5>
           <p>Here you can use rows and columns to organize your footer content.</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam iure provident voluptate
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit amet numquam
+            iure provident voluptate
             esse
             quasi, veritatis totam voluptas nostrum.
           </p>
@@ -30,22 +32,22 @@ const Footer = () => (
           <ul className="list-unstyled">
             <li>
               <p>
-                <a href="#!">PROJECTS</a>
+                <Link to="#!">PROJECTS</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#!">ABOUT US</a>
+                <Link to="#!">ABOUT US</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#!">BLOG</a>
+                <Link to="#!">BLOG</Link>
               </p>
             </li>
             <li>
               <p>
-                <a href="#!">AWARDS</a>
+                <Link to="#!">AWARDS</Link>
               </p>
             </li>
           </ul>
@@ -97,15 +99,15 @@ const Footer = () => (
 
           <h5 className="font-weight-bold text-uppercase mb-4">Follow Us</h5>
 
-          <a type="button" className="btn-floating btn-fb">
+          <button type="button" className="btn-floating btn-fb">
             <Icofont icon="facebook" />
-          </a>
-          <a type="button" className="btn-floating btn-tw">
+          </button>
+          <button type="button" className="btn-floating btn-tw">
             <Icofont icon="twitter" />
-          </a>
-          <a type="button" className="btn-floating btn-dribbble">
+          </button>
+          <button type="button" className="btn-floating btn-dribbble">
             <Icofont icon="linkedin" />
-          </a>
+          </button>
 
         </div>
 
@@ -115,7 +117,7 @@ const Footer = () => (
 
     <div className="footer-copyright text-center py-3">
       © 2020 Copyright:
-      <a href="portfolio-keli.herokuapp.com" className="text-whiteout" target="_blank"> Keli Booster</a>
+      <Link to="portfolio-keli.herokuapp.com" className="text-whiteout" target="_blank"> Keli Booster</Link>
     </div>
 
   </footer>
