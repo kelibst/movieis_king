@@ -43,6 +43,9 @@ git clone https://github.com/kelibst/react_movies.git
 - Run `npm install` to install the local dependencies
 - Run `npm start` to launch local development server
 - The project should launch in your default browser
+- Visit `https://www.themoviedb.org/documentation/api` and register for an api key
+- create a .env file in the root folder and add 
+`REACT_APP_MOVIEDB_API_KEY=YOUR_REACT_API_GOES_HERE`
 
 
 ## Authors

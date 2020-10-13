@@ -5,6 +5,7 @@ import  url  from './urlGenerator';
 
 const Movie = ({ movie }) => (
   <div className="card p-2 p-0 col-sm-4 col-lg-3 border-0">
+  {console.log(movie)}
     <Link to={`/movie/${movie.id}`}>
       <div className="card-img movies-img" style={{ backgroundImage: `url(${url(movie.poster_path)})` }} />
       {' '}
