@@ -53,3 +53,13 @@ code {
 .carousel-inner {
   max-height: 90vh;
 }
+
+.iconStyle{
+  font-size: 3rem;
+  background-color: transparent;
+  border-radius: .5rem;
+  transition: all .2s;
+  &:hover{
+    background-color: red;
+  }
+}

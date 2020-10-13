@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
 import { fetchMovie } from '../../store/actions/fetchAction';
 import url from '../layouts/Movies/urlGenerator';
@@ -14,6 +15,7 @@ class detailsPage extends Component {
     const { data } = this.props.movie;
     const report = data ? (
       <div className="m-2 p-0 d-sm-flex border-0">
+      <button className="btn btn-transparent text-white btn-icon"  onClick={()=> this.props.history.goBack()}><Icofont icon="bubble-left" className="icon-dark iconStyle" /></button>
         <div className="col-md-5 movie-img" style={{ backgroundImage: `url(${url(data.poster_path)})` }} />
         <div className="movie-body col-md-7 text-white">
           <h4 className="movie-title text-white">{data.title}</h4>
@@ -22,7 +24,7 @@ class detailsPage extends Component {
       </div>
     ) : (
       <div className="container">
-        <h6 className="text-danger text-center">Sorry we could not load that movie.</h6>
+        <h6 className="text-danger text-center">We are loading that movie.</h6>
       </div>
     );
 
