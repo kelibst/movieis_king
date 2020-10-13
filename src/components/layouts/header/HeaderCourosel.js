@@ -10,11 +10,10 @@ import { fetchMovies } from '../../../store/actions/fetchAction';
 const HeaderCourosel = ({ movies }) => (
   <div id="headercourosels" className="carousel slide" data-ride="carousel">
     <ol className="carousel-indicators">
-      <li data-target="#headercourosels" data-slide-to="0" className="active" />
       {movies && movies.map((movie, ind) => {
         if (url(movie.backdrop_path)) {
           return (
-            <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id} />
+            <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id}  className={ind === 0 ?  "active" : ""}/>
           );
         }else{
           this.props.fetchMovies()
@@ -23,13 +22,12 @@ const HeaderCourosel = ({ movies }) => (
     </ol>
 
     <div className="carousel-inner">
-      <div className="carousel-item active">
-        <img className="d-block w-100" src={lionKing} alt="First slide" />
-      </div>
-      {movies && movies.map(movie => {
+      
+      {movies && movies.map((movie, ind) => {
         if (url(movie.backdrop_path)) {
+          const active = ind === 0 ? "active" : "";
           return (
-            <div className="carousel-item" key={movie.id}>
+            <div className={`carousel-item ${active}`} key={movie.id}>
               <img className="d-block w-100" src={url(movie.backdrop_path) ? url(movie.backdrop_path) : lionKing} alt={movie.id} />
               <HeaderTitle movie={movie} key={movie.id} />
             </div>

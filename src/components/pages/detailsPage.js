@@ -2,16 +2,21 @@
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
-import { fetchMovie } from '../../store/actions/fetchAction';
+import { fetchMovie, fetchMovies } from '../../store/actions/fetchAction';
 import url from '../layouts/Movies/urlGenerator';
 
 class detailsPage extends Component {
   componentDidMount() {
     const id = this.props.match.params.movie_id;
+    const { movies } = this.props
+    if(!movies.length){
+      this.props.fetchMovies()
+    }
     this.props.fetchMovie(id);
   }
 
   render() {
+    console.log(this.props)
     const { data } = this.props.movie;
     const report = data ? (
       <div className="m-2 p-0 d-sm-flex border-0">
@@ -37,6 +42,7 @@ class detailsPage extends Component {
 }
 const mapStateToProps = state => ({
   movie: state.movies.movie,
+  movies: state.movies.movies
 });
 
-export default connect(mapStateToProps, { fetchMovie })(detailsPage);
+export default connect(mapStateToProps, { fetchMovie, fetchMovies })(detailsPage);

@@ -59,8 +59,15 @@ code {
   background-color: transparent;
   border-radius: .5rem;
   transition: all .2s;
-  
+
   &:hover{
     background-color: red;
+  }
+}
+
+button{
+
+  &:focus{
+    outline: none;
   }
 }
