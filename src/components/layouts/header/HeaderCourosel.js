@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import lionKing from '../../../assets/lionking.jpeg';
 import HeaderTitle from './HeaderTitle';
 import url from '../Movies/urlGenerator';
+import { fetchMovies } from '../../../store/actions/fetchAction';
 
 const HeaderCourosel = ({ movies }) => (
   <div id="headercourosels" className="carousel slide" data-ride="carousel">
@@ -15,6 +16,8 @@ const HeaderCourosel = ({ movies }) => (
           return (
             <li data-target="#headercourosels" key={movie.id} data-slide-to={movie.id} />
           );
+        }else{
+          this.props.fetchMovies()
         }
       })}
     </ol>
@@ -47,4 +50,4 @@ const HeaderCourosel = ({ movies }) => (
 const mapStateToProps = state => ({
   movies: state.movies.movies,
 });
-export default connect(mapStateToProps, null)(HeaderCourosel);
+export default connect(mapStateToProps, { fetchMovies })(HeaderCourosel);
