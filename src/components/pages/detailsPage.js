@@ -16,11 +16,10 @@ class detailsPage extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { data } = this.props.movie;
     const report = data ? (
       <div className="m-2 p-0 d-sm-flex border-0">
-      <button className="btn btn-transparent text-white btn-icon"  onClick={()=> this.props.history.goBack()}><Icofont icon="bubble-left" className="icon-dark iconStyle" /></button>
+      <button type="button" className="btn btn-transparent text-white btn-icon"  onClick={()=> this.props.history.goBack()}><Icofont icon="bubble-left" className="icon-dark iconStyle" /></button>
         <div className="col-md-5 movie-img" style={{ backgroundImage: `url(${url(data.poster_path)})` }} />
         <div className="movie-body col-md-7 text-white">
           <h4 className="movie-title text-white">{data.title}</h4>
