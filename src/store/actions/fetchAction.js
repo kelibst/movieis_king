@@ -30,7 +30,7 @@ const fetchMovies = (keyword, page) => dispatch => {
 };
 
 const fetchMovie = id => dispatch => {
-  Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
+  Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`)
     .then(res => dispatch({
       type: 'FETCH_MOVIE',
       payload: res,

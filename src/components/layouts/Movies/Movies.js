@@ -7,14 +7,13 @@ import './Movies.scss';
 import MoviesForm, { CatNameContext } from './moviesForm';
 
 
+import PropTypes from 'prop-types'
 
 class Movies extends Component {
   static contextType = CatNameContext
   componentDidMount() {
     this.props.fetchMovies('DISCOVER', 2);
   }
-
-    
 
     render() {
       const { movies } = this.props;
@@ -45,5 +44,9 @@ class Movies extends Component {
 const mapStateToProps = state => ({
   movies: state.movies.movies,
 });
-
+  // Movies.propTypes = {
+  //   movies: PropTypes.func.isRequired,
+  //   // completed: PropTypes.bool.isRequired,
+  //   // text: PropTypes.string.isRequired
+  // }
 export default connect(mapStateToProps, { fetchMovies })(Movies);

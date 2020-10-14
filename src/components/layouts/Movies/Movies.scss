@@ -31,10 +31,30 @@
   }
 }
 
+.movie-overview{
+  text-align: center;
+}
+
+.re_date {
+	padding: 1rem;
+	background: #110404cc;
+	position: absolute;
+	right: 0;
+}
 
 
 @media only screen and (max-width: 400px) {
   .movies-container {
     padding: 0;
+  }
+
+  .movie-title{
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .movie-overview{
+    text-align: left;
   }
 }
