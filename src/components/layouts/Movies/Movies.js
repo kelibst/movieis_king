@@ -17,6 +17,7 @@ class Movies extends Component {
   }
 
     render() {
+      console.log('page loaded')
       const { movies } = this.props;
       const loadContent = movies.length ? (
         <section className="container-fluid">

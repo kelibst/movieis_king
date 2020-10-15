@@ -28,16 +28,16 @@ class NavBar extends Component {
     return (
       <div className="container-fluid m-0 p-0">
         <nav className="navbar navbar-expand-lg justify-content-between navbar-light bg-black">
-          <Link className="brand-primary text-whiteout" to="/">
+          <a className="brand-primary text-whiteout" href="/">
             MOVIES
             <span className="brand-secondary">PALACE</span>
-          </Link>
+          </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
           <ul className="navbar-nav align-items-center float-right">
             <li className="nav-item">
-              <NavLink to="/findby" className="link">Order By</NavLink>
+              <a href="/findby" className="link">Order By</a>
             </li>
             
 

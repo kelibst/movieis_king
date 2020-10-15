@@ -13,9 +13,8 @@ const App = () => (
         <Header />
         <Switch>
           <Route exact path="/" component={Movies} />
-          <Route path="/findby" component={filterPage} />
+          <Route exact path="/findby" component={filterPage} />
           <Route path="/movie/:movie_id" component={detailsPage} />
-        
         </Switch>
         <Footer />
       </div>
