@@ -41,4 +41,12 @@ const fetchMovie = id => dispatch => {
     }));
 };
 
-export { fetchMovies, fetchMovie };
+const filterMovies = filteredMovies => dispatch => {
+  console.log('action fired')
+  dispatch({
+    type: 'FILTER_MOVIES',
+    payload: filteredMovies
+  })
+}
+
+export { fetchMovies, fetchMovie, filterMovies };

@@ -8,15 +8,18 @@ import filterPage from './components/pages/filterPage';
 
 const App = () => (
   <BrowserRouter>
-    <Switch>
+    
       <div className="App">
         <Header />
-        <Route exact path="/" component={Movies} />
-        <Route path="/findby" component={filterPage} />
-        <Route path="/movie/:movie_id" component={detailsPage} />
+        <Switch>
+          <Route exact path="/" component={Movies} />
+          <Route path="/findby" component={filterPage} />
+          <Route path="/movie/:movie_id" component={detailsPage} />
+        
+        </Switch>
         <Footer />
       </div>
-    </Switch>
+    
   </BrowserRouter>
 );
 
