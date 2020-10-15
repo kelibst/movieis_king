@@ -14,27 +14,32 @@ const filterPage = props => {
 
     const handleChange = (e) =>{
         const { name, id } = e.target
-        const filMovie = [];
-       movies.filter(movie => {
+        console.log(name, id)
+        let filMovie = [];
+       if(name === 'All' && id==0){
+           filMovie = movies
+       }else{
+        movies.filter(movie => {
             movie.genre_ids.map(movieid => {
                if(movieid == id){
                     filMovie.push(movie)
                }
            })
        })
+       }
         filterMovies(filMovie)
     }
 
 
     return (
-    <div className="container">
-        <h3 className="movies-header">Filter Movies by Genre</h3>
+    <div className="container my-5">
+        <h3 className="movies-header my-5 text-center font-weight-bolder">Filter Movies by Genre</h3>
         { genres.genres.map(genre => (
            <button type ="button" className="btn btn-primary m-2" onClick={handleChange} name={genre.name} id={genre.id} key={genre.id}>{genre.name}</button>
         )) 
         }
 
-        <div className="movies row">
+        <div className="grid-container">
             { filMovies.length ? (
                 filMovies && filMovies.map(movie => {
                     return (<Movie movie={movie} key={movie.id} />)

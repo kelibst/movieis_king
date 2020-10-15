@@ -24,7 +24,7 @@ class Movies extends Component {
           <div className="movies-container my-4 py-3">
             <MoviesForm />
 
-            <div className="row m-0">
+            <div className="grid-container m-0">
               {movies && movies.map(movie => (
                 <Movie movie={movie} key={movie.id} />))}
               {movies ? '' : (<button className="btn btn-primary" onClick={this.props.fetchMovies()}>Load Movies</button>)}
