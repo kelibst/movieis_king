@@ -10,7 +10,7 @@ const categories = [
   'TRENDING',
 ];
 
-export const CatNameContext = createContext();
+
 
 const catDropDown = categories.map(category => (
   <option key={category} value={category}>
@@ -39,7 +39,7 @@ class MoviesForm extends Component {
 
   render() {
     return (
-      <CatNameContext.Provider value={{ ...this.state }}>
+      <div>
         <h3 className="movies-header">{this.state.category}</h3>
         <form className="form-row mt-5 py-5" onSubmit={this.handleChange}>
           <div className="col">
@@ -51,8 +51,7 @@ class MoviesForm extends Component {
             </select>
           </div>
         </form>
-        {this.props.children}
-      </CatNameContext.Provider>
+      </div>
     );
   }
 }

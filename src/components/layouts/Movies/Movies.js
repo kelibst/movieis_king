@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import Movie from './Movie';
 import { fetchMovies } from '../../../store/actions/fetchAction';
 import './Movies.scss';
-import MoviesForm, { CatNameContext } from './moviesForm';
+import MoviesForm from './moviesForm';
 
 
 import PropTypes from 'prop-types'
 
 class Movies extends Component {
-  static contextType = CatNameContext
+  
   componentDidMount() {
     this.props.fetchMovies('DISCOVER', 2);
   }
@@ -19,9 +19,6 @@ class Movies extends Component {
       const { movies } = this.props;
 
       return (
-        <CatNameContext.Consumer>
-          {context => {
-            return (
               <section className="container-fluid">
                 <div className="movies-container my-4 py-3">
                   <MoviesForm />
@@ -34,10 +31,6 @@ class Movies extends Component {
                 </div>
               </section>
             );
-          }}
-
-        </CatNameContext.Consumer>
-      );
     }
 }
 

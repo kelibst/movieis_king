@@ -4,6 +4,7 @@ import Footer from './components/layouts/Footer/Footer';
 import Header from './components/layouts/header/Header';
 import Movies from './components/layouts/Movies/Movies';
 import detailsPage from './components/pages/detailsPage';
+import filterPage from './components/pages/filterPage';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => (
       <div className="App">
         <Header />
         <Route exact path="/" component={Movies} />
+        <Route path="/findby" component={filterPage} />
         <Route path="/movie/:movie_id" component={detailsPage} />
         <Footer />
       </div>

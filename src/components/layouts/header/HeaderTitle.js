@@ -20,7 +20,7 @@ const HeaderTitle = ({ movie }) => {
           Trailer
           <Icofont icon="play" />
         </div>
-        <div className="btn btn-outline-secondary px-4 ml-4"><Icofont icon="share" /></div>
+        <div className="btn btn-outline-dark px-4 ml-4"><Icofont icon="share" className="text-light"/></div>
       </div>
     </div>
   );

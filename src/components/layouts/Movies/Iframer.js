@@ -7,7 +7,7 @@ const Iframer = props => {
     return (
         <div className="col col-md-6 my-5">
             <iframe src={`https://www.youtube.com/embed/${video.key}`} 
-            width="100%" height="100%" allowFullScreen="true" />
+            width="100%" height="100%" allowFullScreen={true} />
         </div>
     )
 }

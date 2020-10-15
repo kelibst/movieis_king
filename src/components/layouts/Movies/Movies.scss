@@ -46,7 +46,10 @@
   position: absolute;
   left: 0;
 }
-
+.videos{
+  overflow-x: auto;
+  overflow: hidden;
+}
 @media only screen and (max-width: 400px) {
   .movies-container {
     padding: 0;

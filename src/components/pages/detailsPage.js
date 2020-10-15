@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Loading from '../../containers/Loading';
 import { fetchMovie, fetchMovies } from '../../store/actions/fetchAction';
 import Iframer from '../layouts/Movies/Iframer';
 import url from '../layouts/Movies/urlGenerator';
@@ -54,7 +55,7 @@ class detailsPage extends Component {
       </div>
     ) : (
       <div className="container">
-        <h6 className="text-danger text-center">We are loading that movie.</h6>
+        <h6 className="text-danger text-center"><Loading /></h6>
       </div>
     );
 

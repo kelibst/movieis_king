@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 class NavBar extends Component {
   constructor(props) {
@@ -36,6 +36,11 @@ class NavBar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <ul className="navbar-nav align-items-center float-right">
+            <li className="nav-item">
+              <NavLink to="/findby" className="link">Order By</NavLink>
+            </li>
+            
+
             <form className="d-flex" onSubmit={this.handleSubmit}>
               <input
                 type="text"

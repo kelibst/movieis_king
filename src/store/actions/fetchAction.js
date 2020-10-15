@@ -23,6 +23,7 @@ const fetchMovies = (keyword, page) => dispatch => {
     .then(res => dispatch({
       type: 'FETCH_DATA',
       payload: res.data.results,
+      act: res
     })).catch(err => dispatch({
       type: 'CREATE_ERROR',
       payload: err,
