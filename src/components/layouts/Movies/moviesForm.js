@@ -1,5 +1,5 @@
-/* eslint-disable */
-import React, { Component, createContext } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../../../store/actions/fetchAction';
 
@@ -9,8 +9,6 @@ const categories = [
   'POPULAR',
   'TRENDING',
 ];
-
-
 
 const catDropDown = categories.map(category => (
   <option key={category} value={category}>
@@ -33,17 +31,19 @@ class MoviesForm extends Component {
       this.setState({
         category: value,
       });
-      this.props.fetchMovies(value);
+      const { fetchMovies } = this.props;
+      fetchMovies(value);
     }
   }
 
   render() {
+    const { category } = this.state;
     return (
       <div>
-        <h3 className="movies-header">{this.state.category}</h3>
+        <h3 className="movies-header">{category}</h3>
         <form className="form-row mt-5 py-5" onSubmit={this.handleChange}>
           <div className="col">
-            <select className="form-control" value={this.state.category} name="category" onChange={this.handleChange}>
+            <select className="form-control" value={category} name="category" onChange={this.handleChange}>
               <option value="" disabled>
                 Category
               </option>
@@ -55,4 +55,9 @@ class MoviesForm extends Component {
     );
   }
 }
+
+MoviesForm.propTypes = {
+  fetchMovies: PropTypes.func.isRequired,
+};
+
 export default connect(null, { fetchMovies })(MoviesForm);
