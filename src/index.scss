@@ -54,52 +54,47 @@ code {
   max-height: 90vh;
 }
 
-.iconStyle{
+.iconStyle {
   font-size: 3rem;
   background-color: transparent;
-  border-radius: .5rem;
-  transition: all .2s;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
 
-  &:hover{
+  &:hover {
     background-color: red;
   }
 }
 
-.grid-container{
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+.grid-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-button{
-
-  &:focus, &:hover{
+button {
+  &:focus,
+  &:hover {
     outline: none;
     box-shadow: none !important;
   }
 }
 
-@keyframes rotate{
-  100% {transform: rotate(360deg) }
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
 }
 
-
-@keyframes dash{
-  0%{
+@keyframes dash {
+  0% {
     stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0}
-  50%{
-  stroke-dasharray: 90, 200;
-  stroke-dashoffset: -35px
+    stroke-dashoffset: 0;
   }
-  100%{
-  stroke-dashoffset: -125px
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
   }
 }
-
-
-
-  
-
-
-  

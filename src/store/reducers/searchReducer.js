@@ -3,7 +3,7 @@ const initialState = {
   movies: [],
   search: [],
   movie: [],
-  filter: []
+  filter: [],
 };
 const searchReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -17,17 +17,17 @@ const searchReducer = (state = initialState, action) => {
         ...state,
         movie: action.payload,
       };
-      case 'FILTER_MOVIES':
-        return{
-          ...state, 
-          filter: action.payload
-        }
-        case 'SEARCH_MOVIE':
-          console.log('movie', action.payload);
-          return {
-            ...state,
-            search: action.payload
-          }
+    case 'FILTER_MOVIES':
+      return {
+        ...state,
+        filter: action.payload,
+      };
+    case 'SEARCH_MOVIE':
+      console.log('movie', action.payload);
+      return {
+        ...state,
+        search: action.payload,
+      };
     default:
       return state;
   }

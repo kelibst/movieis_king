@@ -17,6 +17,7 @@ class Movies extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { movies, searchMove, errors } = this.props;
     const searchResult = searchMove.length ? (
       <div className="results">

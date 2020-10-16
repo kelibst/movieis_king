@@ -23,7 +23,7 @@ const fetchMovies = (keyword, page) => dispatch => {
     .then(res => dispatch({
       type: 'FETCH_DATA',
       payload: res.data.results,
-      act: res
+      act: res,
     })).catch(err => dispatch({
       type: 'CREATE_ERROR',
       payload: err,
@@ -44,19 +44,21 @@ const fetchMovie = id => dispatch => {
 const filterMovies = filteredMovies => dispatch => {
   dispatch({
     type: 'FILTER_MOVIES',
-    payload: filteredMovies
-  })
-}
+    payload: filteredMovies,
+  });
+};
 
 const searchMovie = text => dispatch => {
   Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${text}&include_adult=false`)
-    .then(res =>  dispatch({
+    .then(res => dispatch({
       type: 'SEARCH_MOVIE',
-      payload: res.data.results
+      payload: res.data.results,
     })).catch(err => dispatch({
       type: 'CREATE_ERROR',
       payload: err,
     }));
-}
+};
 
-export { fetchMovies, fetchMovie, filterMovies, searchMovie };
+export {
+  fetchMovies, fetchMovie, filterMovies, searchMovie,
+};

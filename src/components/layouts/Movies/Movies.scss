@@ -28,40 +28,42 @@
 
   &-overview {
     line-height: 2;
+    text-align: center;
   }
 }
 
-.movie-overview{
-  text-align: center;
+.re_date {
+  padding: 1rem;
+  background: #110404cc;
+  position: absolute;
+  right: 0;
 }
 
-.re_date {
-	padding: 1rem;
-	background: #110404cc;
-	position: absolute;
-	right: 0;
-}
-.homepage{
-  padding: .8rem;
+.homepage {
+  padding: 0.8rem;
   position: absolute;
   left: 0;
 }
-.videos{
+
+.videos {
   overflow-x: auto;
   overflow: hidden;
 }
+
 @media only screen and (max-width: 400px) {
   .movies-container {
     padding: 0;
   }
 
-  .movie-title{
-    margin: 3rem 0;
-    font-size: 1.5rem;
-    text-align: left;
-  }
+  .movie {
+    &-title {
+      margin: 3rem 0;
+      font-size: 1.5rem;
+      text-align: left;
+    }
 
-  .movie-overview{
-    text-align: left;
+    &-overview {
+      text-align: left;
+    }
   }
 }

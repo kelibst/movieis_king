@@ -1,8 +1,8 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { searchError } from '../../../store/actions/errorAction';
 import { searchMovie } from '../../../store/actions/fetchAction';
 
@@ -25,14 +25,19 @@ class NavBar extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { search } = this.state
+    const { search } = this.state;
+    const { searchMovie, searchError } = this.props;
     const message = 'Phew! trying to break my app? Your search input is empty!';
-    search.length ? (this.props.searchMovie(search)) : (
-      this.props.searchError(message)
-    )
+    search.length ? (searchMovie(search)) : (
+      searchError(message)
+    );
+    this.setState({
+      search: '',
+    });
   }
 
   render() {
+    const { search } = this.state;
     return (
       <div className="container-fluid m-0 p-0">
         <nav className="navbar navbar-expand-lg justify-content-between navbar-light bg-black">
@@ -44,29 +49,28 @@ class NavBar extends Component {
             <span className="navbar-toggler-icon bg-white" />
           </button>
 
-        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul className="navbar-nav align-items-center navbar-light float-right">
-            <li className="nav-item active">
-              <a href="/findby" className="nav-link text-white mx-2">Order By</a>
-            </li>
-            
+          <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul className="navbar-nav align-items-center navbar-light float-right">
+              <li className="nav-item active">
+                <a href="/findby" className="nav-link text-white mx-2">Order By</a>
+              </li>
 
-            <form className="d-flex" onSubmit={this.handleSubmit}>
-              <input
-                type="text"
-                className="form-control"
-                name="search"
-                placeholder="Search Movie"
-                onChange={this.handleChange}
-                value={this.state.search}
-              />
-              <button type={"submit"} className="btn search-btn" onSubmit={this.handleSubmit}>
-                {' '}
-                <Icofont icon="search" className="text-white" />
-              </button>
-            </form>
+              <form className="d-flex" onSubmit={this.handleSubmit}>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="search"
+                  placeholder="Search Movie"
+                  onChange={this.handleChange}
+                  value={search}
+                />
+                <button type="submit" className="btn search-btn" onSubmit={this.handleSubmit}>
+                  {' '}
+                  <Icofont icon="search" className="text-white" />
+                </button>
+              </form>
 
-          </ul>
+            </ul>
           </div>
         </nav>
       </div>
@@ -74,4 +78,9 @@ class NavBar extends Component {
   }
 }
 
-export default connect(null, { searchMovie, searchError }) (withRouter(NavBar));
+NavBar.propTypes = {
+  searchError: PropTypes.func.isRequired,
+  searchMovie: PropTypes.func.isRequired,
+};
+
+export default connect(null, { searchMovie, searchError })(withRouter(NavBar));

@@ -4,6 +4,6 @@ import searchReducer from './searchReducer';
 
 const rootReducer = combineReducers({
   movies: searchReducer,
-  error: errorReducer
+  error: errorReducer,
 });
 export default rootReducer;
