@@ -5,6 +5,12 @@ const errorReducer = (state = {err: ''}, action) => {
                 ...state,
                 err: action.payload
             };
+        case 'CREATE_ERROR':
+            console.log(action.payload, action.payload.message)
+            return {
+                ...state,
+                err: action.payload.message
+            }
         default: 
         return state
     }

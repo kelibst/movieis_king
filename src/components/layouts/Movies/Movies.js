@@ -8,6 +8,8 @@ import MoviesForm from "./moviesForm";
 
 import PropTypes from "prop-types";
 import Loading from "../../../containers/Loading";
+import Icofont from "react-icofont";
+import ErRors from "../../../containers/ErRors";
 
 class Movies extends Component {
   componentDidMount() {
@@ -19,6 +21,7 @@ class Movies extends Component {
     const searchResult = searchMove.length ? (
       <div className="results">
         <h4 className="text-center text-light">Search Results</h4>
+        
         <div className="grid-container mt-5">
           {searchMove &&
             searchMove.map((search) => (
@@ -28,9 +31,7 @@ class Movies extends Component {
         </div>
       </div>
     ) : (
-      <div className="col my-5">
-        <h4 className="text-danger text-center font-weight-bolder">{errors}</h4>
-      </div>
+       errors ?  <ErRors err={errors} /> : ""
     );
     const loadContent = movies.length ? (
       <section className="container-xl">

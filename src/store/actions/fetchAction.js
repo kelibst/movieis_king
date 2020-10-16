@@ -53,7 +53,10 @@ const searchMovie = text => dispatch => {
     .then(res =>  dispatch({
       type: 'SEARCH_MOVIE',
       payload: res.data.results
-    }))
+    })).catch(err => dispatch({
+      type: 'CREATE_ERROR',
+      payload: err,
+    }));
 }
 
 export { fetchMovies, fetchMovie, filterMovies, searchMovie };
