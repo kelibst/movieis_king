@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
+import { searchError } from '../../../store/actions/errorAction';
 import { searchMovie } from '../../../store/actions/fetchAction';
 
 class NavBar extends Component {
@@ -25,8 +26,10 @@ class NavBar extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { search } = this.state
-    this.props.searchMovie(search)
-    this.props.history.push('/search/results')
+    const message = 'Phew! trying to break my app? Your search input is empty!';
+    search.length ? (this.props.searchMovie(search)) : (
+      this.props.searchError(message)
+    )
   }
 
   render() {
@@ -57,7 +60,7 @@ class NavBar extends Component {
                 onChange={this.handleChange}
                 value={this.state.search}
               />
-              <button type={"submit"} className="btn search-btn">
+              <button type={"submit"} className="btn search-btn" onSubmit={this.handleSubmit}>
                 {' '}
                 <Icofont icon="search" className="text-white" />
               </button>
@@ -71,4 +74,4 @@ class NavBar extends Component {
   }
 }
 
-export default connect(null, { searchMovie }) (withRouter(NavBar));
+export default connect(null, { searchMovie, searchError }) (withRouter(NavBar));
