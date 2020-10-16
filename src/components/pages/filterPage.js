@@ -32,7 +32,7 @@ const filterPage = props => {
 
 
     return (
-    <div className="container my-5">
+    <div className="container-xl my-5">
         <h3 className="movies-header my-5 text-center font-weight-bolder">Filter Movies by Genre</h3>
         { genres.genres.map(genre => (
            <button type ="button" className="btn btn-primary m-2" onClick={handleChange} name={genre.name} id={genre.id} key={genre.id}>{genre.name}</button>

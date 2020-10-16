@@ -17,11 +17,28 @@ class Movies extends Component {
   }
 
     render() {
-      console.log('page loaded')
-      const { movies } = this.props;
+      const { movies, searchMove } = this.props;
+      const searchResult = searchMove.length ? (
+        <div className="results">
+        <h4 className="text-center text-light">Search Results</h4>
+            <div className="grid-container mt-5">
+            
+            { searchMove && searchMove.map(search => (
+              
+              <Movie movie={search} key={search.id} />
+            )) }
+            <hr/>
+            </div>
+        </div>
+      ) : (
+        ' '
+      )
       const loadContent = movies.length ? (
-        <section className="container-fluid">
+        <section className="container-xl">
+
           <div className="movies-container my-4 py-3">
+            
+            { searchResult }
             <MoviesForm />
 
             <div className="grid-container m-0">
@@ -38,10 +55,10 @@ class Movies extends Component {
 
 const mapStateToProps = state => ({
   movies: state.movies.movies,
+  searchMove: state.movies.search
 });
-  // Movies.propTypes = {
-  //   movies: PropTypes.func.isRequired,
-  //   // completed: PropTypes.bool.isRequired,
-  //   // text: PropTypes.string.isRequired
-  // }
+  Movies.propTypes = {
+    movies: PropTypes.shape.isRequired,
+    fetchMovies: PropTypes.func.isRequired,
+  }
 export default connect(mapStateToProps, { fetchMovies })(Movies);

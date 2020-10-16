@@ -5,7 +5,6 @@ import Header from './components/layouts/header/Header';
 import Movies from './components/layouts/Movies/Movies';
 import detailsPage from './components/pages/detailsPage';
 import filterPage from './components/pages/filterPage';
-
 const App = () => (
   <BrowserRouter>
     
@@ -14,7 +13,7 @@ const App = () => (
         <Switch>
           <Route exact path="/" component={Movies} />
           <Route exact path="/findby" component={filterPage} />
-          <Route path="/movie/:movie_id" component={detailsPage} />
+          <Route exact path="/movie/:movie_id" component={detailsPage} />
         </Switch>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 const initialState = {
   text: '',
   movies: [],
-  loading: false,
+  search: [],
   movie: [],
   filter: []
 };
@@ -18,11 +18,16 @@ const searchReducer = (state = initialState, action) => {
         movie: action.payload,
       };
       case 'FILTER_MOVIES':
-        console.log("filtering movies", action.payload)
         return{
           ...state, 
           filter: action.payload
         }
+        case 'SEARCH_MOVIE':
+          console.log('movie', action.payload);
+          return {
+            ...state,
+            search: action.payload
+          }
     default:
       return state;
   }

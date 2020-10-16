@@ -1,7 +1,9 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
-import { Link, NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { searchMovie } from '../../../store/actions/fetchAction';
 
 class NavBar extends Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class NavBar extends Component {
   }
 
   handleChange(e) {
-    const { name, value } = e.target;
+    const { value } = e.target;
     this.setState({
       search: value,
     });
@@ -22,6 +24,9 @@ class NavBar extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const { search } = this.state
+    this.props.searchMovie(search)
+    this.props.history.push('/search/results')
   }
 
   render() {
@@ -33,33 +38,37 @@ class NavBar extends Component {
             <span className="brand-secondary">PALACE</span>
           </a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon bg-white" />
           </button>
-          <ul className="navbar-nav align-items-center float-right">
-            <li className="nav-item">
-              <a href="/findby" className="link">Order By</a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul className="navbar-nav align-items-center navbar-light float-right">
+            <li className="nav-item active">
+              <a href="/findby" className="nav-link text-white mx-2">Order By</a>
             </li>
             
 
             <form className="d-flex" onSubmit={this.handleSubmit}>
               <input
                 type="text"
-                className="form-control d-none d-sm-block"
+                className="form-control"
                 name="search"
                 placeholder="Search Movie"
                 onChange={this.handleChange}
+                value={this.state.search}
               />
-              <button className="btn search-btn">
+              <button type={"submit"} className="btn search-btn">
                 {' '}
                 <Icofont icon="search" className="text-white" />
               </button>
             </form>
 
           </ul>
+          </div>
         </nav>
       </div>
     );
   }
 }
 
-export default NavBar;
+export default connect(null, { searchMovie }) (withRouter(NavBar));

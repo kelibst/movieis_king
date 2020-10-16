@@ -42,11 +42,18 @@ const fetchMovie = id => dispatch => {
 };
 
 const filterMovies = filteredMovies => dispatch => {
-  console.log('action fired')
   dispatch({
     type: 'FILTER_MOVIES',
     payload: filteredMovies
   })
 }
 
-export { fetchMovies, fetchMovie, filterMovies };
+const searchMovie = text => dispatch => {
+  Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${text}&include_adult=false`)
+    .then(res =>  dispatch({
+      type: 'SEARCH_MOVIE',
+      payload: res.data.results
+    }))
+}
+
+export { fetchMovies, fetchMovie, filterMovies, searchMovie };
