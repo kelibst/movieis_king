@@ -5,4 +5,4 @@ const searchError = message => dispatch => {
   });
 };
 
-export { searchError };
+export default searchError;

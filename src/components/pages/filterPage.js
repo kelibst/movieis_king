@@ -1,3 +1,6 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable  eqeqeq */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -16,7 +19,6 @@ const filterPage = props => {
 
   const handleChange = e => {
     const { name, id } = e.target;
-    console.log(name, id);
     let filMovie = [];
     if (name === 'All' && id == 0) {
       filMovie = movies;
@@ -55,7 +57,10 @@ const filterPage = props => {
 };
 
 filterPage.propTypes = {
-
+  movies: PropTypes.shape.isRequired,
+  filMovies: PropTypes.func.isRequired,
+  filterMovies: PropTypes.func.isRequired,
+  fetchMovies: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

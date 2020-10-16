@@ -23,7 +23,6 @@ const searchReducer = (state = initialState, action) => {
         filter: action.payload,
       };
     case 'SEARCH_MOVIE':
-      console.log('movie', action.payload);
       return {
         ...state,
         search: action.payload,

@@ -19,7 +19,7 @@ const ErRors = props => {
 };
 
 ErRors.propTypes = {
-
+  err: PropTypes.shape.isRequired,
 };
 
 export default ErRors;

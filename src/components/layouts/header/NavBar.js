@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-expressions */
+
 import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { searchError } from '../../../store/actions/errorAction';
+import searchError from '../../../store/actions/errorAction';
 import { searchMovie } from '../../../store/actions/fetchAction';
 
 class NavBar extends Component {
