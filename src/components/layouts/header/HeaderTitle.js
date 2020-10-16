@@ -1,9 +1,8 @@
-/* eslint-disable */
 import React from 'react';
 import Icofont from 'react-icofont';
+import PropTypes from 'prop-types';
 
 const HeaderTitle = ({ movie }) => {
-  
   const { title, overview } = movie;
   return (
     <div className="header-title">
@@ -20,10 +19,12 @@ const HeaderTitle = ({ movie }) => {
           Trailer
           <Icofont icon="play" />
         </div>
-        <div className="btn btn-outline-dark px-4 ml-4"><Icofont icon="share" className="text-light"/></div>
+        <div className="btn btn-outline-dark px-4 ml-4"><Icofont icon="share" className="text-light" /></div>
       </div>
     </div>
   );
 };
-
+HeaderTitle.propTypes = {
+  movie: PropTypes.shape.isRequired,
+};
 export default HeaderTitle;

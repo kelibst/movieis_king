@@ -55,6 +55,6 @@ const mapStateToProps = state => ({
 
 HeaderCourosel.propTypes = {
   movies: PropTypes.shape.isRequired,
-  fetchMovies: PropTypes.shape.isRequired,
+  fetchMovies: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps, { fetchMovies })(HeaderCourosel);
