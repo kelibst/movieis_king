@@ -56,7 +56,7 @@ class Movies extends Component {
         </div>
       </section>
     ) : (
-      <Loading />
+      errors ?  <ErRors err={errors} /> : <Loading />
     );
     return loadContent;
   }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Icofont from 'react-icofont';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ErRors from '../../containers/ErRors';
 import Loading from '../../containers/Loading';
 import { fetchMovie, fetchMovies } from '../../store/actions/fetchAction';
 import Iframer from '../layouts/Movies/Iframer';
@@ -20,6 +21,7 @@ class detailsPage extends Component {
 
   render() {
     const { data } = this.props.movie;
+    const { errors } = this.props
     console.log(data)
     const report = data ? (
       <div className="m-2 p-0 d-sm-flex border-0">
@@ -55,7 +57,7 @@ class detailsPage extends Component {
       </div>
     ) : (
       <div className="container">
-        <h6 className="text-danger text-center"><Loading /></h6>
+        { errors ?  <ErRors err={errors} /> : <Loading />} 
       </div>
     );
 
@@ -68,7 +70,8 @@ class detailsPage extends Component {
 }
 const mapStateToProps = state => ({
   movie: state.movies.movie,
-  movies: state.movies.movies
+  movies: state.movies.movies,
+  errors: state.error.err
 });
 
 export default connect(mapStateToProps, { fetchMovie, fetchMovies })(detailsPage);

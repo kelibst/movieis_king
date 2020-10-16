@@ -44,7 +44,7 @@ class NavBar extends Component {
             <span className="navbar-toggler-icon bg-white" />
           </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav align-items-center navbar-light float-right">
             <li className="nav-item active">
               <a href="/findby" className="nav-link text-white mx-2">Order By</a>

@@ -9,8 +9,10 @@ const ErRors = props => {
         fontSize: '4rem',
     }
     return (
-    <div className="col my-5 text-center rotate-center ">
-        <Icofont icon="nerd-smile" style={errorIcon} className="error-icon text-danger" />
+    <div className="col my-5 text-center">
+        <div className="rotate-center">
+            <Icofont icon="nerd-smile" style={errorIcon} className="error-icon text-danger" />
+        </div>
         <h4 className="text-danger pt-4 font-weight-bolder">{err}</h4>
     </div>
     )

@@ -1,10 +1,15 @@
 /* eslint-disable */
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import ErRors from '../../../containers/ErRors';
+import Loading from '../../../containers/Loading';
 import  url  from './urlGenerator';
 
-const Movie = ({ movie }) => (
-  <div className="card p-0 border-0">
+const Movie = ({ movie, errors }) => {
+
+  const movieDetails = movie ? (
+    <div className="card p-0 border-0">
     <Link to={`/movie/${movie.id}`}>
       <div className="card-img movies-img" style={{ backgroundImage: `url(${url(movie.poster_path)})` }}><h6 className="text-danger re_date">{movie.release_date}</h6></div>
       {' '}
@@ -16,6 +21,18 @@ const Movie = ({ movie }) => (
       
     </div>
   </div>
-);
+  ) : (
+    errors ?  <ErRors err={errors} /> : <Loading/>
+  )
 
-export default Movie;
+  return(
+  movieDetails
+)};
+
+
+const mapStateToProps = (state) => ({
+  errors: state.error.err
+});
+
+
+export default connect(mapStateToProps, null)(Movie);
