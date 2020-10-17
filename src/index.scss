@@ -1,0 +1,100 @@
+$darkout: #000;
+$whiteout: #d6d6d6;
+$blood: #ff0e39;
+$greyout: #35353f;
+$lightdarken: #201f20;
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $darkout;
+  color: $whiteout;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+.text {
+  &-whiteout {
+    color: $whiteout;
+  }
+
+  &-greyout {
+    color: $greyout;
+  }
+}
+
+.bg {
+  &-light-darken {
+    background: $lightdarken;
+  }
+}
+
+.carousel-inner {
+  max-height: 90vh;
+}
+
+.iconStyle {
+  font-size: 3rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+button {
+  &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: none !important;
+  }
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}
